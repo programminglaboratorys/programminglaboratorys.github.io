@@ -1,0 +1,895 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>commandkit package &mdash; commandkit  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="commandkit documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            commandkit
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">commandkit package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-commandkit.EventManager">commandkit.EventManager module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-commandkit.commander">commandkit.commander module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-commandkit.core">commandkit.core module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-commandkit.parser">commandkit.parser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-commandkit">Module contents</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">commandkit</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">commandkit package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/commandkit.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul><div class="rst-breadcrumbs-buttons" role="navigation" aria-label="Sequential page navigation">
+        <a href="index.html" class="btn btn-neutral float-left" title="commandkit documentation" accesskey="p"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+  </div>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="commandkit-package">
+<h1>commandkit package<a class="headerlink" href="#commandkit-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-commandkit.EventManager">
+<span id="commandkit-eventmanager-module"></span><h2>commandkit.EventManager module<a class="headerlink" href="#module-commandkit.EventManager" title="Link to this heading"></a></h2>
+<p>This module contains a class responsible for managing event listeners and dispatching events.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.EventManager.EventManager">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.EventManager.</span></span><span class="sig-name descname"><span class="pre">EventManager</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">events</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Callable</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/EventManager.html#EventManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.EventManager.EventManager" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>responsible for managing event listeners and dispatching events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>events</strong> (<em>dict</em><em>[</em><em>str</em><em>, </em><em>list</em><em>[</em><em>Callable</em><em>]</em><em>]</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.EventManager.EventManager.add_listen">
+<span class="sig-name descname"><span class="pre">add_listen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/EventManager.html#EventManager.add_listen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.EventManager.EventManager.add_listen" title="Link to this definition"></a></dt>
+<dd><p>adds a new event listener</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>Callable</em>) – the listener</p></li>
+<li><p><strong>name</strong> (<em>str</em><em> (</em><em>default: None</em><em>)</em>) – the name of the listener. (uses the listeners name if None).</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.EventManager.EventManager.dispatch">
+<span class="sig-name descname"><span class="pre">dispatch</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/EventManager.html#EventManager.dispatch"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.EventManager.EventManager.dispatch" title="Link to this definition"></a></dt>
+<dd><p>dispatch an event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event_name</strong> (<em>str</em>) – the name of the event</p></li>
+<li><p><strong>*args</strong> – the arguments of the event</p></li>
+<li><p><strong>**kwargs</strong> – the keyword arguments of the event</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.EventManager.EventManager.event">
+<span class="sig-name descname"><span class="pre">event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/EventManager.html#EventManager.event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.EventManager.EventManager.event" title="Link to this definition"></a></dt>
+<dd><p>adds a new event listener; used as a decorator</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>func</strong> (<em>Callable</em>) – the listener</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.EventManager.EventManager.remove_listen">
+<span class="sig-name descname"><span class="pre">remove_listen</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/EventManager.html#EventManager.remove_listen"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.EventManager.EventManager.remove_listen" title="Link to this definition"></a></dt>
+<dd><p>removes a event listener</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>func</strong> (<em>Callable</em>) – the listener</p></li>
+<li><p><strong>name</strong> (<em>str</em><em> (</em><em>defaults: None</em><em>)</em>) – the name of the listener. (uses the listeners name if None)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.EventManager.EventManager.schedule_event">
+<span class="sig-name descname"><span class="pre">schedule_event</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">event</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ev</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/EventManager.html#EventManager.schedule_event"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.EventManager.EventManager.schedule_event" title="Link to this definition"></a></dt>
+<dd><p>handles firing the event</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> (<em>Callable</em>) – the event to fire</p></li>
+<li><p><strong>ev</strong> (<em>str</em>) – the event name</p></li>
+<li><p><strong>*args</strong> – the arguments of the event</p></li>
+<li><p><strong>**kwargs</strong> – the keyword arguments of the event</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-commandkit.commander">
+<span id="commandkit-commander-module"></span><h2>commandkit.commander module<a class="headerlink" href="#module-commandkit.commander" title="Link to this heading"></a></h2>
+<p>module contains a class to manage commands</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.commander.BadArgument">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.commander.</span></span><span class="sig-name descname"><span class="pre">BadArgument</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#BadArgument"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BadArgument" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.core.CommandError" title="commandkit.core.CommandError"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandError</span></code></a></p>
+<p>when a parsing command arguments fails</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommand">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.commander.</span></span><span class="sig-name descname"><span class="pre">BasicCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function:</span> <span class="pre">~typing.Callable</span> <span class="pre">|</span> <span class="pre">~typing.Awaitable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommand" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Represents a basic command.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommand.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#commandkit.commander.BasicCommand.description" title="Link to this definition"></a></dt>
+<dd><p>A short description of the command.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommand.extra">
+<span class="sig-name descname"><span class="pre">extra</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#commandkit.commander.BasicCommand.extra" title="Link to this definition"></a></dt>
+<dd><p>Additional metadata.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommand.function">
+<span class="sig-name descname"><span class="pre">function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Awaitable</span></em><a class="headerlink" href="#commandkit.commander.BasicCommand.function" title="Link to this definition"></a></dt>
+<dd><p>The function or coroutine representing the command.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommand.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#commandkit.commander.BasicCommand.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the command. If not provided, defaults to the function’s name.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.commander.</span></span><span class="sig-name descname"><span class="pre">BasicCommands</span></span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommands"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommands" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A command manager</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.add_command">
+<span class="sig-name descname"><span class="pre">add_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#commandkit.commander.BasicCommand" title="commandkit.commander.BasicCommand"><span class="pre">BasicCommand</span></a></span></span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommands.add_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommands.add_command" title="Link to this definition"></a></dt>
+<dd><p>add a new command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>function</strong> (<em>Callable</em>) – The function or coroutine representing the command.</p></li>
+<li><p><strong>name</strong> (<em>str</em><em> (</em><em>default: None</em><em>)</em>) – The name of the command. Defaults to the function’s name if not provided.</p></li>
+<li><p><strong>description</strong> (<em>str</em><em> (</em><em>default: None</em><em>)</em>) – A short description of the command.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>object representing the added command.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="#commandkit.commander.BasicCommand" title="commandkit.commander.BasicCommand">BasicCommand</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.call_command">
+<span class="sig-name descname"><span class="pre">call_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommands.call_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommands.call_command" title="Link to this definition"></a></dt>
+<dd><p>call command(s)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.command">
+<span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kw</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommands.command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommands.command" title="Link to this definition"></a></dt>
+<dd><p>a wrapper of self.add_command as a decorator</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.command_exist">
+<span class="sig-name descname"><span class="pre">command_exist</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommands.command_exist"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommands.command_exist" title="Link to this definition"></a></dt>
+<dd><p>name(s) in commands</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.commands">
+<span class="sig-name descname"><span class="pre">commands</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#commandkit.commander.BasicCommand" title="commandkit.commander.BasicCommand"><span class="pre">BasicCommand</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#commandkit.commander.BasicCommands.commands" title="Link to this definition"></a></dt>
+<dd><p>A dictionary mapping command names to their corresponding BasicCommand objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.default_command_object">
+<span class="sig-name descname"><span class="pre">default_command_object</span></span><a class="headerlink" href="#commandkit.commander.BasicCommands.default_command_object" title="Link to this definition"></a></dt>
+<dd><p>the default class to wrap functions</p>
+<p>alias of <a class="reference internal" href="#commandkit.commander.BasicCommand" title="commandkit.commander.BasicCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasicCommand</span></code></a></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.get_command">
+<span class="sig-name descname"><span class="pre">get_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommands.get_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommands.get_command" title="Link to this definition"></a></dt>
+<dd><p>get command function raise CommandNotFoundError if command not in self.commands</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.get_name_or_callable_name">
+<span class="sig-name descname"><span class="pre">get_name_or_callable_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommands.get_name_or_callable_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommands.get_name_or_callable_name" title="Link to this definition"></a></dt>
+<dd><p>either get the name of a callable or just return the name if it’s a string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>Callable</em><em> | </em><em>str</em>) – callable or str</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – excepted str/callable but got type(s) instead</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the name of the callable or str</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.BasicCommands.remove_command">
+<span class="sig-name descname"><span class="pre">remove_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#BasicCommands.remove_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.BasicCommands.remove_command" title="Link to this definition"></a></dt>
+<dd><p>remove a command</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.commander.Command">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.commander.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function:</span> <span class="pre">~typing.Callable</span> <span class="pre">|</span> <span class="pre">~typing.Awaitable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#Command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.Command" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.commander.BasicCommand" title="commandkit.commander.BasicCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasicCommand</span></code></a></p>
+<p>Represents a command.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.Command.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#commandkit.commander.Command.description" title="Link to this definition"></a></dt>
+<dd><p>A short description of the command.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.Command.extra">
+<span class="sig-name descname"><span class="pre">extra</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#commandkit.commander.Command.extra" title="Link to this definition"></a></dt>
+<dd><p>Additional metadata.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.Command.function">
+<span class="sig-name descname"><span class="pre">function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Awaitable</span></em><a class="headerlink" href="#commandkit.commander.Command.function" title="Link to this definition"></a></dt>
+<dd><p>The function or coroutine representing the command.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.Command.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#commandkit.commander.Command.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the command. If not provided, defaults to the function’s name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.Command.parse_annotation">
+<span class="sig-name descname"><span class="pre">parse_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#Command.parse_annotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.Command.parse_annotation" title="Link to this definition"></a></dt>
+<dd><p>wrapper of parse_annotation</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.commander.CommandLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.commander.</span></span><span class="sig-name descname"><span class="pre">CommandLine</span></span><a class="reference internal" href="_modules/commandkit/commander.html#CommandLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.CommandLine" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.commander.Commander" title="commandkit.commander.Commander"><code class="xref py py-class docutils literal notranslate"><span class="pre">Commander</span></code></a></p>
+<p>A class that simluates argv parsing, inherits from Commander.
+check <code class="xref py py-func docutils literal notranslate"><span class="pre">parser.parse_to_argv()</span></code> for more info.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.CommandLine.parse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#commandkit.commander.CommandLine.parse" title="Link to this definition"></a></dt>
+<dd><p>wrapper of <code class="xref py py-func docutils literal notranslate"><span class="pre">_parser.parse_to_argv_gen()</span></code>.
+generator that takes a string and return a list of argv.
+it simulates how argv are parsed in windows command prompt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – the string to be parsed</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.commander.CommandNotFoundError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.commander.</span></span><span class="sig-name descname"><span class="pre">CommandNotFoundError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#CommandNotFoundError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.CommandNotFoundError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.core.CommandError" title="commandkit.core.CommandError"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandError</span></code></a></p>
+<p>when command doesn’t exist</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.commander.Commander">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.commander.</span></span><span class="sig-name descname"><span class="pre">Commander</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#Commander"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.Commander" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.commander.Commands" title="commandkit.commander.Commands"><code class="xref py py-class docutils literal notranslate"><span class="pre">Commands</span></code></a>, <a class="reference internal" href="#commandkit.core.CommandParser" title="commandkit.core.CommandParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandParser</span></code></a></p>
+<p>A class to manage commands, inherits from Commands, CommandParser</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prefix</strong> (<em>str</em>) – the prefix that command strings must start with.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.commander.Commander.process_command">
+<span class="sig-name descname"><span class="pre">process_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#Commander.process_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.Commander.process_command" title="Link to this definition"></a></dt>
+<dd><p>processing string to a command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – the string to process</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whatever command(s) returns</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.commander.Commands">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.commander.</span></span><span class="sig-name descname"><span class="pre">Commands</span></span><a class="reference internal" href="_modules/commandkit/commander.html#Commands"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.commander.Commands" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.commander.BasicCommands" title="commandkit.commander.BasicCommands"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasicCommands</span></code></a></p>
+<p>An advanced command manager, inherits from BasicCommands</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.Commands.commands">
+<span class="sig-name descname"><span class="pre">commands</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference internal" href="#commandkit.commander.Command" title="commandkit.commander.Command"><span class="pre">Command</span></a><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#commandkit.commander.Commands.commands" title="Link to this definition"></a></dt>
+<dd><p>A dictionary mapping command names to their corresponding Command objects.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.commander.Commands.default_command_object">
+<span class="sig-name descname"><span class="pre">default_command_object</span></span><a class="headerlink" href="#commandkit.commander.Commands.default_command_object" title="Link to this definition"></a></dt>
+<dd><p>the default class to wrap functions</p>
+<p>alias of <a class="reference internal" href="#commandkit.commander.Command" title="commandkit.commander.Command"><code class="xref py py-class docutils literal notranslate"><span class="pre">Command</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-commandkit.core">
+<span id="commandkit-core-module"></span><h2>commandkit.core module<a class="headerlink" href="#module-commandkit.core" title="Link to this heading"></a></h2>
+<p>a module containing Classes and functions to parse and manage command strings</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.core.CommandError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.core.</span></span><span class="sig-name descname"><span class="pre">CommandError</span></span><a class="reference internal" href="_modules/commandkit/core.html#CommandError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.CommandError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>basic CommandError exception</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.core.CommandParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.core.</span></span><span class="sig-name descname"><span class="pre">CommandParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.CommandParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to parse and manage command strings with a specified prefix.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.core.CommandParser.get_command_args">
+<span class="sig-name descname"><span class="pre">get_command_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.get_command_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.CommandParser.get_command_args" title="Link to this definition"></a></dt>
+<dd><p>get command args from string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – string to be parsed</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>command args</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.core.CommandParser.get_command_name">
+<span class="sig-name descname"><span class="pre">get_command_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.get_command_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.CommandParser.get_command_name" title="Link to this definition"></a></dt>
+<dd><p>get command name from string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – string to be parsed</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>command name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.core.CommandParser.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.CommandParser.parse" title="Link to this definition"></a></dt>
+<dd><p>parse the input string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – the string to parse</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the parsed string</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Iterable[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.core.CommandParser.prefix">
+<span class="sig-name descname"><span class="pre">prefix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#commandkit.core.CommandParser.prefix" title="Link to this definition"></a></dt>
+<dd><p>The prefix that command strings must start with.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.core.CommandParser.process_string">
+<span class="sig-name descname"><span class="pre">process_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expected_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_overflow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.process_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.CommandParser.process_string" title="Link to this definition"></a></dt>
+<dd><p>wrapper function of eval_args</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>expected_args</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the format of the arguments</p></li>
+<li><p><strong>string</strong> (<em>str</em>) – string to be split</p></li>
+<li><p><strong>allow_overflow</strong> (<em>bool</em><em> (</em><em>default: True</em><em>)</em>) – whether to allow extra arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#commandkit.core.InvalidCommandError" title="commandkit.core.InvalidCommandError"><strong>InvalidCommandError</strong></a> – if the command doesn’t start with prefix or command is None or empty</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of two elements; the arguments, the remaining arguments</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str | list[str]], list[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.core.CommandParser.startswith_prefix">
+<span class="sig-name descname"><span class="pre">startswith_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.startswith_prefix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.CommandParser.startswith_prefix" title="Link to this definition"></a></dt>
+<dd><p>check if the input string start with prefix(s)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.core.InvalidCommandError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.core.</span></span><span class="sig-name descname"><span class="pre">InvalidCommandError</span></span><a class="reference internal" href="_modules/commandkit/core.html#InvalidCommandError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.InvalidCommandError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.core.CommandError" title="commandkit.core.CommandError"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandError</span></code></a></p>
+<p>when entered a command doesn’t start with prefix or command is None or empty</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.core.PrefixError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.core.</span></span><span class="sig-name descname"><span class="pre">PrefixError</span></span><a class="reference internal" href="_modules/commandkit/core.html#PrefixError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.PrefixError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>raise when str doesn’t starts with prefix(s)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="commandkit.core.get_word">
+<span class="sig-prename descclassname"><span class="pre">commandkit.core.</span></span><span class="sig-name descname"><span class="pre">get_word</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/commandkit/core.html#get_word"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.get_word" title="Link to this definition"></a></dt>
+<dd><p>take whatever the first word of string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – the string to take the first word</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the first word of the string</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="commandkit.core.skip_prefix">
+<span class="sig-prename descclassname"><span class="pre">commandkit.core.</span></span><span class="sig-name descname"><span class="pre">skip_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/core.html#skip_prefix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.core.skip_prefix" title="Link to this definition"></a></dt>
+<dd><p>skip prefix(s) if string doesn’t starts with prefix(s) raise PrefixError()
+if string equal prefix returns an empty string(“”) else remove the prefix</p>
+</dd></dl>
+
+</section>
+<section id="module-commandkit.parser">
+<span id="commandkit-parser-module"></span><h2>commandkit.parser module<a class="headerlink" href="#module-commandkit.parser" title="Link to this heading"></a></h2>
+<p>this module contains the parsers</p>
+<p>functions to parse strings to argv, parse annotations and eval args based on</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.parser.EAError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.parser.</span></span><span class="sig-name descname"><span class="pre">EAError</span></span><a class="reference internal" href="_modules/commandkit/parser.html#EAError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.parser.EAError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>basic exception for Eval args</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.parser.EAOverflowError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.parser.</span></span><span class="sig-name descname"><span class="pre">EAOverflowError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">expected_length</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/parser.html#EAOverflowError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.parser.EAOverflowError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">OverflowError</span></code>, <a class="reference internal" href="#commandkit.parser.EAError" title="commandkit.parser.EAError"><code class="xref py py-class docutils literal notranslate"><span class="pre">EAError</span></code></a></p>
+<p>when eval_args have more args to handle than what it can handle</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.parser.MissingError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.parser.</span></span><span class="sig-name descname"><span class="pre">MissingError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variables</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">names</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/parser.html#MissingError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.parser.MissingError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.parser.EAError" title="commandkit.parser.EAError"><code class="xref py py-class docutils literal notranslate"><span class="pre">EAError</span></code></a></p>
+<p>when argument(s) is missing</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="commandkit.parser.eval_args">
+<span class="sig-prename descclassname"><span class="pre">commandkit.parser.</span></span><span class="sig-name descname"><span class="pre">eval_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expected_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_overflow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_okay</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Any</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">Missing</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/commandkit/parser.html#eval_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.parser.eval_args" title="Link to this definition"></a></dt>
+<dd><p>A function to simulate python functions positional/var positional arguments.</p>
+<p>Note: it modify args argument</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>expected_args</strong> (<em>list</em>) – the format of the arguments</p></li>
+<li><p><strong>args</strong> (<em>list</em>) – arguments</p></li>
+<li><p><strong>allow_overflow</strong> (<em>bool</em><em> (</em><em>default: False</em><em>)</em>) – whether to allow extra arguments</p></li>
+<li><p><strong>missing_okay</strong> (<em>bool</em><em> (</em><em>default: True</em><em>)</em>) – whether to allow missing arguments</p></li>
+<li><p><strong>missing</strong> (<em>Any</em><em> (</em><em>default: Missing</em><em>)</em>) – the value to use for missing arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>ValueError</strong> – if a star was provided but not followed by an argument name</p></li>
+<li><p><a class="reference internal" href="#commandkit.parser.MissingError" title="commandkit.parser.MissingError"><strong>MissingError</strong></a> – if a required argument is missing</p></li>
+<li><p><a class="reference internal" href="#commandkit.parser.EAOverflowError" title="commandkit.parser.EAOverflowError"><strong>EAOverflowError</strong></a> – if too many arguments are provided</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of two elements; the arguments, the remaining arguments</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str | list[str]], list[str]]</p>
+</dd>
+</dl>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;</span> <span class="n">eval_args</span><span class="p">([</span><span class="s2">&quot;whatup&quot;</span><span class="p">,</span><span class="s2">&quot;hmm&quot;</span><span class="p">,</span><span class="s2">&quot;*&quot;</span><span class="p">,</span><span class="s2">&quot;hehe&quot;</span><span class="p">],</span><span class="s2">&quot;good ye? more stuff :)&quot;</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="p">({</span><span class="s1">&#39;whatup&#39;</span><span class="p">:</span> <span class="s1">&#39;good&#39;</span><span class="p">,</span> <span class="s1">&#39;hmm&#39;</span><span class="p">:</span> <span class="s1">&#39;ye?&#39;</span><span class="p">,</span> <span class="s1">&#39;hehe&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;more&#39;</span><span class="p">,</span> <span class="s1">&#39;stuff&#39;</span><span class="p">,</span> <span class="s1">&#39;:)&#39;</span><span class="p">]},</span> <span class="p">[])</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="commandkit.parser.parse_annotation">
+<span class="sig-prename descclassname"><span class="pre">commandkit.parser.</span></span><span class="sig-name descname"><span class="pre">parse_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">f</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Callable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">_kw</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/commandkit/parser.html#parse_annotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.parser.parse_annotation" title="Link to this definition"></a></dt>
+<dd><p>wrapper function of _parse_annotation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>f</strong> (<em>function</em>) – the function to parse its argument</p></li>
+<li><p><strong>_args</strong> (<em>Tuple</em><em>[</em><em>Any</em><em>]</em>) – the arguments to parse</p></li>
+<li><p><strong>_kw</strong> (<em>Dict</em><em>[</em><em>str</em><em>, </em><em>Any</em><em>]</em>) – the keyword arguments to parse</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The list of parsed positional arguments, The dictionary of parsed keyword arguments.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple[list[Any], dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="commandkit.parser.parse_to_argv">
+<span class="sig-prename descclassname"><span class="pre">commandkit.parser.</span></span><span class="sig-name descname"><span class="pre">parse_to_argv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/commandkit/_parser.html#parse_to_argv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.parser.parse_to_argv" title="Link to this definition"></a></dt>
+<dd><p>wrapper of <code class="xref py py-func docutils literal notranslate"><span class="pre">_parser.parse_to_argv_gen()</span></code>.
+generator that takes a string and return a list of argv.
+it simulates how argv are parsed in windows command prompt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – the string to be parsed</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-commandkit">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-commandkit" title="Link to this heading"></a></h2>
+<p>commandkit is a package to make managing and implementing events managers, commands easier</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.Command">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.</span></span><span class="sig-name descname"><span class="pre">Command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">function:</span> <span class="pre">~typing.Callable</span> <span class="pre">|</span> <span class="pre">~typing.Awaitable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra:</span> <span class="pre">dict</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#Command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.Command" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.commander.BasicCommand" title="commandkit.commander.BasicCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasicCommand</span></code></a></p>
+<p>Represents a command.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.Command.description">
+<span class="sig-name descname"><span class="pre">description</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#commandkit.Command.description" title="Link to this definition"></a></dt>
+<dd><p>A short description of the command.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.Command.extra">
+<span class="sig-name descname"><span class="pre">extra</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">dict</span></em><a class="headerlink" href="#commandkit.Command.extra" title="Link to this definition"></a></dt>
+<dd><p>Additional metadata.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.Command.function">
+<span class="sig-name descname"><span class="pre">function</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">Callable</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Awaitable</span></em><a class="headerlink" href="#commandkit.Command.function" title="Link to this definition"></a></dt>
+<dd><p>The function or coroutine representing the command.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.Command.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#commandkit.Command.name" title="Link to this definition"></a></dt>
+<dd><p>The name of the command. If not provided, defaults to the function’s name.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.Command.parse_annotation">
+<span class="sig-name descname"><span class="pre">parse_annotation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#Command.parse_annotation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.Command.parse_annotation" title="Link to this definition"></a></dt>
+<dd><p>wrapper of parse_annotation</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="commandkit.CommandError">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.</span></span><span class="sig-name descname"><span class="pre">CommandError</span></span><a class="reference internal" href="_modules/commandkit/core.html#CommandError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.CommandError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>basic CommandError exception</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.CommandLine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.</span></span><span class="sig-name descname"><span class="pre">CommandLine</span></span><a class="reference internal" href="_modules/commandkit/commander.html#CommandLine"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.CommandLine" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.commander.Commander" title="commandkit.commander.Commander"><code class="xref py py-class docutils literal notranslate"><span class="pre">Commander</span></code></a></p>
+<p>A class that simluates argv parsing, inherits from Commander.
+check <a class="reference internal" href="#commandkit.parser.parse_to_argv" title="commandkit.parser.parse_to_argv"><code class="xref py py-func docutils literal notranslate"><span class="pre">parser.parse_to_argv()</span></code></a> for more info.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.CommandLine.parse">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#commandkit.CommandLine.parse" title="Link to this definition"></a></dt>
+<dd><p>wrapper of <code class="xref py py-func docutils literal notranslate"><span class="pre">_parser.parse_to_argv_gen()</span></code>.
+generator that takes a string and return a list of argv.
+it simulates how argv are parsed in windows command prompt</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – the string to be parsed</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.CommandParser">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.</span></span><span class="sig-name descname"><span class="pre">CommandParser</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.CommandParser" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A class to parse and manage command strings with a specified prefix.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.CommandParser.get_command_args">
+<span class="sig-name descname"><span class="pre">get_command_args</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.get_command_args"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.CommandParser.get_command_args" title="Link to this definition"></a></dt>
+<dd><p>get command args from string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – string to be parsed</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>command args</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.CommandParser.get_command_name">
+<span class="sig-name descname"><span class="pre">get_command_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.get_command_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.CommandParser.get_command_name" title="Link to this definition"></a></dt>
+<dd><p>get command name from string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – string to be parsed</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>command name</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.CommandParser.parse">
+<span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Iterable</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.parse"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.CommandParser.parse" title="Link to this definition"></a></dt>
+<dd><p>parse the input string</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – the string to parse</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>the parsed string</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Iterable[str]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="commandkit.CommandParser.prefix">
+<span class="sig-name descname"><span class="pre">prefix</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#commandkit.CommandParser.prefix" title="Link to this definition"></a></dt>
+<dd><p>The prefix that command strings must start with.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.CommandParser.process_string">
+<span class="sig-name descname"><span class="pre">process_string</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expected_args</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">allow_overflow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.process_string"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.CommandParser.process_string" title="Link to this definition"></a></dt>
+<dd><p>wrapper function of eval_args</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>expected_args</strong> (<em>list</em><em>[</em><em>str</em><em>]</em>) – the format of the arguments</p></li>
+<li><p><strong>string</strong> (<em>str</em>) – string to be split</p></li>
+<li><p><strong>allow_overflow</strong> (<em>bool</em><em> (</em><em>default: True</em><em>)</em>) – whether to allow extra arguments</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#commandkit.core.InvalidCommandError" title="commandkit.core.InvalidCommandError"><strong>InvalidCommandError</strong></a> – if the command doesn’t start with prefix or command is None or empty</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>tuple of two elements; the arguments, the remaining arguments</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple[dict[str, str | list[str]], list[str]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.CommandParser.startswith_prefix">
+<span class="sig-name descname"><span class="pre">startswith_prefix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/commandkit/core.html#CommandParser.startswith_prefix"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.CommandParser.startswith_prefix" title="Link to this definition"></a></dt>
+<dd><p>check if the input string start with prefix(s)</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="commandkit.Commander">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">commandkit.</span></span><span class="sig-name descname"><span class="pre">Commander</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prefix</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#Commander"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.Commander" title="Link to this definition"></a></dt>
+<dd><p>Bases: <a class="reference internal" href="#commandkit.commander.Commands" title="commandkit.commander.Commands"><code class="xref py py-class docutils literal notranslate"><span class="pre">Commands</span></code></a>, <a class="reference internal" href="#commandkit.core.CommandParser" title="commandkit.core.CommandParser"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandParser</span></code></a></p>
+<p>A class to manage commands, inherits from Commands, CommandParser</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>prefix</strong> (<em>str</em>) – the prefix that command strings must start with.</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="commandkit.Commander.process_command">
+<span class="sig-name descname"><span class="pre">process_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">string</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/commandkit/commander.html#Commander.process_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#commandkit.Commander.process_command" title="Link to this definition"></a></dt>
+<dd><p>processing string to a command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>string</strong> (<em>str</em>) – the string to process</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>whatever command(s) returns</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Any</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="commandkit documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, programminglaboratorys.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
